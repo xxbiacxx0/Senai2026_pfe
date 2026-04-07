@@ -1,0 +1,123 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container com um fundo verde bem suave */
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f7f4; /* Verde menta claríssimo */
+}
+
+/* Card branco para destaque */
+.card {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.1); /* Sombra levemente esverdeada */
+    overflow: hidden;
+    max-width: 800px;
+    width: 90%;
+}
+
+.card img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.formulario {
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario h2 {
+    margin-bottom: 20px;
+    color: #1b5e20; /* Verde escuro para o título */
+    font-size: 1.8rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #4e6e4e; /* Verde acinzentado */
+}
+
+.input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4ce;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+/* Foco no input com destaque em verde */
+.input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+/* Botão de Login - Verde Principal */
+.botao {
+    padding: 12px;
+    background-color: #2e7d32; /* Verde floresta */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.botao:hover {
+    background-color: #1b5e20; /* Verde mais escuro no hover */
+}
+
+/* Link de Cadastro */
+.formulario a {
+    margin-top: 15px;
+    text-align: center;
+    color: #2e7d32;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.formulario a:hover {
+    text-decoration: underline;
+    color: #1b5e20;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        max-width: 400px;
+    }
+    
+    .card img, .formulario {
+        width: 100%;
+    }
+    
+    .card img {
+        height: 200px;
+    }
+}
