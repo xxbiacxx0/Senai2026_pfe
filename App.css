@@ -1,4 +1,6 @@
-/* Reset básico */
+/* =========================================
+   1. RESET GLOBAL E CONFIGURAÇÕES BASE
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,118 +8,285 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Container com um fundo verde bem suave */
-.container {
-    height: 100vh;
-    width: 100vw;
+body {
+    /* O padding-top compensa o menu fixo para o conteúdo não sumir atrás dele */
+    padding-top: 70px; 
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* --- CONFIGURAÇÃO DA BARRA DE NAVEGAÇÃO SUPERIOR --- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #f0f7f4 0%, #e8f5e9 100%);
+    padding: 15px 0;
+    border-bottom: 2px solid #c8e6c9;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f7f4; /* Verde menta claríssimo */
+    z-index: 1000;
 }
 
-/* Card branco para destaque */
-.card {
-    background: white;
+nav ul {
+    list-style: none;
     display: flex;
-    flex-direction: row;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.1); /* Sombra levemente esverdeada */
-    overflow: hidden;
-    max-width: 800px;
-    width: 90%;
+    gap: 30px;
 }
 
-.card img {
-    width: 50%;
+nav li a {
+    text-decoration: none;
+    color: #1b5e20;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav li a:hover {
+    background-color: #2e7d32;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   2. PÁGINA DE LOGIN (Verde Menta)
+   ========================================= */
+.login-page-custom {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f7f4;
+    padding: 20px;
+}
+
+.login-page-custom .card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-page-custom img {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
-.formulario {
+.login-page-custom .formulario {
     padding: 40px;
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.formulario h2 {
-    margin-bottom: 20px;
-    color: #1b5e20; /* Verde escuro para o título */
+.login-page-custom h2 {
+    margin-bottom: 25px;
+    color: #1b5e20;
+    text-align: center;
     font-size: 1.8rem;
 }
 
-form {
+/* Layout para Computador (Desktop) no Login */
+@media (min-width: 768px) {
+    .login-page-custom .card {
+        flex-direction: row;
+        max-width: 900px; /* Alarga o card no PC */
+        height: 500px;
+    }
+    
+    .login-page-custom img {
+        width: 50%;
+        height: 100%;
+    }
+    
+    .login-page-custom .formulario {
+        width: 50%;
+    }
+}
+
+/* =========================================
+   3. PÁGINA DE CADASTRO (Azul e Branco)
+   ========================================= */
+.cadastro-container {
+    max-width: 600px; /* Tamanho ideal para formulários no PC */
+    margin: 40px auto; 
+    padding: 3rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 86, 179, 0.1);
+}
+
+.cadastro-container h3 {
+    text-align: center;
+    color: #004085;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.cadastro-container form {
     display: flex;
     flex-direction: column;
+    gap: 1.2rem;
 }
 
-label {
-    margin-bottom: 5px;
+.cadastro-container .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cadastro-container label {
     font-weight: 600;
-    color: #4e6e4e; /* Verde acinzentado */
+    color: #0056b3;
+    font-size: 0.95rem;
 }
 
-.input {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ced4ce;
-    border-radius: 6px;
+.cadastro-container input {
+    padding: 1rem;
+    border: 2px solid #cce5ff;
+    border-radius: 8px;
     font-size: 1rem;
+    background-color: #f8fbff;
+    transition: all 0.3s ease;
+}
+
+.cadastro-container input:focus {
     outline: none;
-    transition: all 0.3s;
+    border-color: #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
 }
 
-/* Foco no input com destaque em verde */
-.input:focus {
-    border-color: #2e7d32;
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
-}
-
-/* Botão de Login - Verde Principal */
-.botao {
-    padding: 12px;
-    background-color: #2e7d32; /* Verde floresta */
-    color: white;
+.cadastro-container button {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #007bff;
+    color: #ffffff;
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s ease;
 }
 
-.botao:hover {
-    background-color: #1b5e20; /* Verde mais escuro no hover */
+.cadastro-container button:hover {
+    background-color: #0056b3;
 }
 
-/* Link de Cadastro */
-.formulario a {
-    margin-top: 15px;
+/* =========================================
+   4. DASHBOARD (Cards, Gráficos e Tabelas)
+   ========================================= */
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1200px; /* Limita a largura em monitores muito grandes */
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.titulo-pagina {
+    font-size: 2.5rem;
+    color: #2c3e50;
     text-align: center;
-    color: #2e7d32;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
 }
 
-.formulario a:hover {
-    text-decoration: underline;
-    color: #1b5e20;
+.titulo-pagina::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #2e7d32;
+    margin: 10px auto;
+    border-radius: 2px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .card {
-        flex-direction: column;
-        max-width: 400px;
-    }
-    
-    .card img, .formulario {
-        width: 100%;
-    }
-    
-    .card img {
-        height: 200px;
-    }
+/* Ajuste dos Cards para Desktop (Ficam lado a lado automaticamente) */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gráficos lado a lado no Computador */
+.graficos-section {
+    margin-bottom: 3rem;
+}
+
+.graficos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.grafico-box {
+    flex: 1;
+    min-width: 400px; /* Garante que os gráficos não fiquem esmagados */
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ced4da;
+}
+
+/* Tabela Otimizada */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+}
+
+thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+tbody tr:hover {
+    background-color: #f1f8ff;
 }

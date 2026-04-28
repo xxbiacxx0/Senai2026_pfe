@@ -1,0 +1,117 @@
+/* 1. CORREÇÃO AQUI: Removi o ponto antes de section e adicionei vírgula ou espaço */
+
+
+section.login-page-custom {
+    height: 100vh !important; /* Força a altura */
+    width: 100vw;
+    max-width: 100%; /* Garante que o container do Bootstrap não limite a largura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f7f4 !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Para garantir que o Card não herde estilos estranhos do Bootstrap */
+.card {
+    background: white !important;
+    display: flex !important;
+    flex-direction: row;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: 95%;
+    border: none !important; /* Remove a borda padrão do card do Bootstrap */
+}
+
+/* Mantendo o restante que já estava ótimo */
+.card img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.formulario {
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario h2 {
+    margin-bottom: 25px;
+    color: #1b5e20;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #4e6e4e;
+    font-size: 0.9rem;
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4ce;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+.botao {
+    padding: 12px;
+    background-color: #2e7d32 !important;
+    color: white !important;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    background-color: #1b5e20 !important;
+    color: white !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column !important;
+        max-width: 400px;
+        margin: 20px;
+    }
+    
+    .card img, .formulario {
+        width: 100% !important;
+    }
+    
+    .card img {
+        height: 150px;
+    }
+
+    .formulario {
+        padding: 25px;
+    }
+}
