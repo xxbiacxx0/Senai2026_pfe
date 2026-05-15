@@ -1,35 +1,39 @@
-import { Routes, Route } from "react-router-dom";
+import {Text, View, FlatList, StyleSheet, Image, SafeAreaView, SafeAreaViewBase} from 'react-native'
+import Header from './componentes/Header';
+import tarefas from './dados/tarefas';
 
-import Login from '../pages/login.jsx';
-import Registro from '../pages/registro.jsx';
-import Relatorio from '../pages/relatorio.jsx';
-
-
-// Verifique se este arquivo existe na pasta pages com este nome exato:
-import Dashboard from '../pages/dashboard.jsx'; 
-import PaginaCadastro from "../pages/cadastro.jsx";
-
-export default function Rotas() {
-    return (
-        <Routes>
-            {/* Rota inicial: Login */}
-            <Route path="/" element={<Login />} />
-            
-            {/* Rota de Registro */}
-            <Route path="/registro" element={<Registro />}/>
-            
-            {/* Rota do Dashboard (REATIVADA) */}
-            <Route path="/dashboard" element={<Dashboard />}/>
-            
-            {/* Rota de Cadastro */}
-            <Route path="/cadastro" element={<PaginaCadastro />}/>
-            
-            {/* Rota do Relatório */}
-            <Route path="/relatorio" element={<Relatorio />}/>
-
-            {/* Dica: Adicione uma rota de segurança para caminhos inexistentes */}
-            <Route path="*" element={<div>Página não encontrada</div>} />
-        </Routes>
-    );
+function ItemTarefa({item}) {
+  return (
+    <View style={estilos.card}>
+      <Image source= {{uri: item.photo}} style={estilos.foto} />
+      <View style={estilos.conteudo}>
+        <View style={estilos.conteudo}>
+          <Text style={estilos.titulo}>{item.title}</Text>
+          <Text style={estilos.status}>{item.status}</Text>
+        </View>
+        <Text style={estilos.desc}>{item.description}</Text>
+      </View>
+    </View>
+  );
 }
+
+export default function Index() {
+  return (
+   <SafeAreaView style = {{flex: 1}}>
+        <Header titulo= 'Senai Tasks'/>
+        <FlatList
+        data={tarefas} 
+        keyExtrator={(item) => String(item.id)}
+        renderItem={({item}) => <ItemTarefa item={item}/>}
+        />
+   </SafeAreaView>
+  );
+}
+
+const estilos = StyleSheet.create({
+    foto: {
+        width: '100%',
+        height: 160
+    }
+})
 
