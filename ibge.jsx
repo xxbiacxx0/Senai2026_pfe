@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ScrollView, View, Text, TextInput, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
+// REMOVIDO: O import da baleia.png que dava erro foi removido daqui.
+
 export default function Index() {
   const [nome, setNome] = useState('');
   const [idade, setIdade] = useState('');
@@ -19,14 +21,13 @@ export default function Index() {
       <View style={estilos.ondaBase} />
 
       <ScrollView contentContainerStyle={estilos.scrollContainer} showsVerticalScrollIndicator={false}>
-        {/* Container do Logo com Sombra e URL da internet */}
+        {/* Container do Logo com Sombra */}
         <View style={estilos.logoContainer}>
-          <Image
-            source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Logotipo_do_IBGE.svg/1200px-Logotipo_do_IBGE.svg.png' }}
-            style={estilos.logo}
-            resizeMode='contain'
-          />
-        </View>
+            <Image
+            source={{ uri: 'https://fnp.org.br/media/k2/items/cache/6793dfaeaedce2b3d0e76a48b5f73adc_XL.jpg' }}
+            style={{ width: 120, height: 120 }} // Tamanho definido direto na tag garante que ela apareça!
+            resizeMode='contain'/>
+         </View>
 
         <Text style={estilos.titulo}>Pesquisa</Text>
 

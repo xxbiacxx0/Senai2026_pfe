@@ -1,39 +1,16 @@
-import {Text, View, FlatList, StyleSheet, Image, SafeAreaView, SafeAreaViewBase} from 'react-native'
-import Header from './componentes/Header';
-import tarefas from './dados/tarefas';
-
-function ItemTarefa({item}) {
-  return (
-    <View style={estilos.card}>
-      <Image source= {{uri: item.photo}} style={estilos.foto} />
-      <View style={estilos.conteudo}>
-        <View style={estilos.conteudo}>
-          <Text style={estilos.titulo}>{item.title}</Text>
-          <Text style={estilos.status}>{item.status}</Text>
-        </View>
-        <Text style={estilos.desc}>{item.description}</Text>
-      </View>
-    </View>
-  );
-}
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import Login from './pages/login';
+import Ibge from './pages/ibge';
 
 export default function Index() {
+ 
   return (
-   <SafeAreaView style = {{flex: 1}}>
-        <Header titulo= 'Senai Tasks'/>
-        <FlatList
-        data={tarefas} 
-        keyExtrator={(item) => String(item.id)}
-        renderItem={({item}) => <ItemTarefa item={item}/>}
-        />
-   </SafeAreaView>
+    // <Login />
+    <Ibge />
   );
 }
 
 const estilos = StyleSheet.create({
-    foto: {
-        width: '100%',
-        height: 160
-    }
+ 
 })
-
