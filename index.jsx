@@ -1,16 +1,11 @@
-import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import Login from './pages/login';
-import Ibge from './pages/ibge';
+import { View } from 'react-native'
+import Navigation from './routes/navigation';
 
 export default function Index() {
- 
   return (
-    // <Login />
-    <Ibge />
+     <View>
+      {/* <Navigation/> */}
+     </View>
   );
 }
 
-const estilos = StyleSheet.create({
- 
-})
