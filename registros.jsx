@@ -1,14 +1,15 @@
 import { useState } from "react";
 import {View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 
-export default function Login({navigation}){
+export default function Registro({navigation}){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [confSenha, setConfSenha] = useState('');
 
     return(
         <View>
             <Text>Bem Vindo ao Sesi Pet</Text>
-            <Text>Insira seus dados</Text>
+            <Text>Cadastre-se</Text>
             <TextInput 
                 placeholder = 'Insira seu e-mail'
                 value={email}
@@ -20,10 +21,13 @@ export default function Login({navigation}){
                 onChangeText={setSenha}
                 secureTextEntry
             />
-            <TouchableOpacity onPress={() => navigation.replace('Principal')}> 
-                <Text>Login</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Registro')}> 
+            <TextInput 
+                placeholder = '****'
+                value={confSenha}
+                onChangeText={setConfSenha}
+                secureTextEntry
+            />
+            <TouchableOpacity onPress={() => navigation.navigate('Login')}> 
                 <Text>Cadastrar</Text>
             </TouchableOpacity>
         </View>
