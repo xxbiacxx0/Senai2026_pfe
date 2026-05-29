@@ -1,24 +1,25 @@
 import { useState } from "react";
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 
-export default function Login({ navigation }) {
+export default function Cadastro({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [confSenha, setConfSenha] = useState('');
 
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#121212" />
 
       <View style={styles.headerContainer}>
-        <Text style={styles.title}>⭐ Star Music</Text>
-        <Text style={styles.subtitle}>Música do seu jeito. Faça login para continuar.</Text>
+        <Text style={styles.title}>Inscreva-se grátis</Text>
+        <Text style={styles.subtitle}>Crie uma conta no ⭐ Star Music para começar a ouvir.</Text>
       </View>
 
       <View style={styles.form}>
-        <Text style={styles.label}>E-mail ou nome de usuário</Text>
+        <Text style={styles.label}>Qual é o seu e-mail?</Text>
         <TextInput 
           style={styles.input}
-          placeholder='E-mail ou nome de usuário'
+          placeholder='Insira seu e-mail'
           placeholderTextColor='#7A7A7A'
           value={email}
           onChangeText={setEmail}
@@ -26,28 +27,31 @@ export default function Login({ navigation }) {
           autoCapitalize="none"
         />
 
-        <Text style={styles.label}>Senha</Text>
+        <Text style={styles.label}>Crie uma senha</Text>
         <TextInput 
           style={styles.input}
-          placeholder='Senha'
+          placeholder='Escolha uma senha forte'
           placeholderTextColor='#7A7A7A'
           value={senha}
           onChangeText={setSenha}
           secureTextEntry
         />
 
-        <TouchableOpacity 
-          style={styles.buttonPrimary} 
-          onPress={() => navigation.replace('Principal')}
-        > 
-          <Text style={styles.buttonPrimaryText}>Entrar</Text>
-        </TouchableOpacity>
+        <Text style={styles.label}>Confirme sua senha</Text>
+        <TextInput 
+          style={styles.input}
+          placeholder='Repita a senha escolhida'
+          placeholderTextColor='#7A7A7A'
+          value={confSenha}
+          onChangeText={setConfSenha}
+          secureTextEntry
+        />
 
         <TouchableOpacity 
-          style={styles.buttonSecondary} 
-          onPress={() => navigation.navigate('Registro')}
+          style={styles.buttonPrimary} 
+          onPress={() => navigation.navigate('Login')}
         > 
-          <Text style={styles.buttonSecondaryText}>Não tem uma conta? Inscreva-se</Text>
+          <Text style={styles.buttonPrimaryText}>Avançar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -63,20 +67,18 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     marginBottom: 32,
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   title: {
-    fontSize: 36,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginBottom: 8,
-    letterSpacing: -1,
+    marginBottom: 6,
+    letterSpacing: -0.5,
   },
   subtitle: {
     fontSize: 15,
-    fontWeight: '500',
     color: '#A7A7A7',
-    textAlign: 'center',
   },
   form: {
     width: '100%',
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   buttonPrimary: {
-    backgroundColor: '#1374F2', // Azul oficial
+    backgroundColor: '#1374F2', // Azul Identidade Star Music
     borderRadius: 25,
     paddingVertical: 14,
     alignItems: 'center',
@@ -107,15 +109,5 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  buttonSecondary: {
-    marginTop: 24,
-    alignItems: 'center',
-  },
-  buttonSecondaryText: {
-    color: '#A7A7A7',
-    fontSize: 14,
-    fontWeight: 'bold',
-    textDecorationLine: 'underline',
   },
 });
