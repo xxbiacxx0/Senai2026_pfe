@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "projeto-base",
-    "slug": "projeto-base",
+    "name": "estacao_meteorologica",
+    "slug": "estacao_meteorologica",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "projetobase",
+    "scheme": "estacaometeorologica",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
