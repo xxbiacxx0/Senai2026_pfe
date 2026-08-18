@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fce7f3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.caixa-calculadora {
+  background: #ffffff;
+  border: 2px solid #f472b6;
+  border-radius: 16px;
+  padding: 24px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.15);
+}
+
+.titulo {
+  color: #831843;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.campo-texto {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #fbcfe8;
+  border-radius: 8px;
+  background: #fdf2f8;
+  color: #831843;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.grade-botoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.botao {
+  padding: 10px;
+  background: #ec4899;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #db2777;
+}
+
+.caixa-resultado {
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  color: #db2777;
+  font-weight: bold;
+}

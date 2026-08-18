@@ -1,0 +1,25 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   .gitignore
+#	new file:   app/favicon.ico
+#	new file:   app/globals.css
+#	new file:   app/layout.js
+#	new file:   app/page.js
+#	new file:   app/page.module.css
+#	new file:   eslint.config.mjs
+#	new file:   jsconfig.json
+#	new file:   next.config.mjs
+#	new file:   package-lock.json
+#	new file:   package.json
+#	new file:   public/file.svg
+#	new file:   public/globe.svg
+#	new file:   public/next.svg
+#	new file:   public/vercel.svg
+#	new file:   public/window.svg
+#
